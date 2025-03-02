@@ -16,6 +16,6 @@ cp.addEventListener('click', () => {
         "#f1f6f9",
     ];
     const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    console.log(randomColor);
+    // console.log(randomColor);
     ourbg.style.backgroundColor = randomColor;
 });
