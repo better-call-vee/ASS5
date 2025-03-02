@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const buttons = document.querySelectorAll('#boton');
+    let tasksCompleted = 0;
+    const totalTasks = buttons.length;
 
     buttons.forEach(button => {
         button.addEventListener('click', () => {
+            alert("Board Updated Successfully");
+
             button.classList.remove('bg-mn');
             button.classList.add('bg-done', 'pointer-events-none');
 
@@ -36,6 +40,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 newHistoryDiv.classList.add('bg-bgg', 'text-[#4a4b4d]', 'text-[0.9rem]', 'p-4', 'rounded-lg', 'my-2');
                 newHistoryDiv.textContent = `You have completed the task "${taskName}" at ${currentTime}`;
                 historyContainer.appendChild(newHistoryDiv);
+            }
+
+            tasksCompleted++;
+            if (tasksCompleted === totalTasks) {
+                alert("Congrats! All tasks completed");
             }
         });
     });
